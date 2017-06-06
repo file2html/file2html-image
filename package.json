@@ -1,0 +1,30 @@
+{
+  "name": "file2html-image",
+  "version": "0.1.0",
+  "description": "Images engine for file2html",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jest --no-cache --config=./node_modules/file2html-dev-tools/jest/config.json"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "file2html": "git@github.com:file2html/file2html.git",
+    "file2html-dev-tools": "git@github.com:file2html/file2html-dev-tools.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/file2html/file2html-image.git"
+  },
+  "keywords": [
+    "file2html",
+    "archive",
+    "zip"
+  ],
+  "author": "webschik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/file2html/file2html-image/issues"
+  },
+  "homepage": "https://github.com/file2html/file2html-image#readme"
+}
