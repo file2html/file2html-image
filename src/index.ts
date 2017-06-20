@@ -1,5 +1,4 @@
 import * as file2html from 'file2html/lib/index';
-import bytesToString from 'file2html/lib/bytes-to-string';
 
 export const pngMimeType: string = 'image/png';
 
@@ -13,6 +12,23 @@ const supportedMimeTypes: string[] = [
     'image/vnd.microsoft.icon',
     pngMimeType
 ];
+
+/**
+ * @param {Uint8Array} bytes
+ * @returns {string}
+ */
+function bytesToString (bytes: Uint8Array): string {
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+    const QUANTUM: number = 32768;
+    const {length} = bytes;
+    let result: string = '';
+
+    for (let i = 0; i < length; i += QUANTUM) {
+        result += String.fromCharCode.apply(null, bytes.slice(i, i + QUANTUM));
+    }
+
+    return result;
+}
 
 export default class ImageReader extends file2html.Reader {
     read ({fileInfo}: file2html.ReaderParams) {
